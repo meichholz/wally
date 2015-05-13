@@ -1,0 +1,11 @@
+README.md
+History.md
+Manifest.txt
+BUILDING.md
+Rakefile
+Gemfile
+Gemfile.lock
+bin/wally
+lib/wally.rb
+lib/wally/version.rb
+lib/wally/app.rb

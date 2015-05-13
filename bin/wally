@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+
+begin
+    require 'wally'
+rescue LoadError # deprecated: lazy reload fallback in leaned out development context
+    load File.join( File.dirname(__FILE__),
+                                   '..', 'lib', 'wally.rb')  
+end
+
+app = Wally::App.new
+app.setup! ARGV
+app.run!
+
