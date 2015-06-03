@@ -6,6 +6,7 @@ source "https://rubygems.org/"
 
 gem "netaddr", ">=0"
 gem "gli", ">=0"
+gem "gtk3", ">=0"
 
 gem "hoe-yard", ">=0.1.2", :group => [:development, :test]
 gem "hoe-bundler", "~>1.2", :group => [:development, :test]

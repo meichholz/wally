@@ -1,2 +1,3 @@
 umask 022
+RUBY=21
 

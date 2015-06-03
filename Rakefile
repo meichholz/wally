@@ -1,7 +1,9 @@
 load 'devsupport/tasks/setup.rb'
 ds_tasks_for :hoe
+
 ds_configure do |c|
   c.program_name = 'wally'
+  c.yard_options = [ ]
 end
 
 projectname = ds_env.program_name
@@ -13,6 +15,7 @@ ds_hoe_spec(projectname) do |spec|
   spec.developer "Marian Eichholz", "marian.eichholz@freenet.ag"
   spec.extra_deps << ['netaddr']
   spec.extra_deps << ['gli']
+  spec.extra_deps << ['gtk3']
 end
 
 # glue tasks
