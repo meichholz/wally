@@ -1,3 +1,6 @@
+require 'gli'
+require 'gtk3'
+
 @base_modnames = [ ]
 
 def init_loader
@@ -27,6 +30,6 @@ end
 # now load everything You need and mix in the project name space
 init_loader
 load_basemodules
-# include Depptool # @think can be someway factored out
+# include Wally # @think can be someway factored out
 load_modules
 

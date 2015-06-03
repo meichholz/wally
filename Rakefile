@@ -20,13 +20,13 @@ end
 
 # glue tasks
 Rake::Task[:default].clear
-task :default => 'test:wip'
+task :default => 'run:gui'
 
 namespace :run do
   @testconfig = ""
   # construct rake tasks for each command
   %w(
-    config 
+    version gui 
   ).each do |command|
     desc "Command: #{command}"
     task command do |t|

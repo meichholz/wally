@@ -1,0 +1,12 @@
+{
+  "*": {"make": [ "rake" ]},
+  "lib/wally/*.rb": {"type": "core",
+	  "alternate": "spec/{}_spec.rb" },
+  "*.md": {"type": "doc"},
+  "BUILDING.md": { "type": "doc"},
+  "spec/*_spec.rb": {"dispatch": ["rspec", "{file}"],
+  	"alternate": "lib/wally/{}.rb" },
+  "features/*.feature": { "type": "feature" },
+  "features/step_definitions/*.rb": { "type": "step" },
+  "features/support/*.rb": { "type": "support" }
+}
