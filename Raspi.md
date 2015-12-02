@@ -32,4 +32,6 @@ Ausgangspunkt ist ein rohinstalliertes **Raspbian** auf Jessie-Basis. Alles ande
 * Die Rolle ist `wallviewer`.
 * "pi" bleibt Account
 * FQDN ist `raspi.bugslayer.de`
+* In der `puppet.conf` muss der `server=gilesbugslayer.de` eingetragen werden (Sektion ``[agent]``)
+* Kann dann direkt genutzt werden.
 
