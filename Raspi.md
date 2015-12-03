@@ -18,14 +18,6 @@ Ausgangspunkt ist ein rohinstalliertes **Raspbian** auf Jessie-Basis. Alles ande
 ** vim
 ** puppet-common
 
-
-## Sicherheitsmaßnahmen
-
-* Das Passwort für den PI-User sollte nun geändert werden.
-* Der Autologin sollte abgeschaltet werden
-* Bildschirmschonerei
-* 
-
 ## Betüddelung durch Puppet
 
 * giles.bugslayer.de versorgt als puppetmaster.
@@ -34,4 +26,14 @@ Ausgangspunkt ist ein rohinstalliertes **Raspbian** auf Jessie-Basis. Alles ande
 * FQDN ist `raspi.bugslayer.de`
 * In der `puppet.conf` muss der `server=gilesbugslayer.de` eingetragen werden (Sektion ``[agent]``)
 * Kann dann direkt genutzt werden.
+
+## Sicherheitsmaßnahmen
+
+* Das Passwort für den PI-User sollte nun geändert werden.
+* Der Autologin sollte abgeschaltet werden (raspi-config)
+* Bildschirmschonerei: Manuell mit Sperre versehen
+
+## Andere Tunings
+
+* echo "hdmi_mode=16" >> /boot/config.txt
 
