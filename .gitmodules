@@ -1,3 +1,3 @@
 [submodule "devsupport"]
 	path = devsupport
-	url = ssh://git@git.freenet.de/srv/git/repos/software/devsupport
+	url = ssh://git@giles.bugslayer.de/srv/git/projects/devsupport
