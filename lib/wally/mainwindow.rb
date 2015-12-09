@@ -1,21 +1,16 @@
 module Wally
 
-  class MainWindow < Gtk::Window
+  class MainWindow
     def initialize
-      super
-      setup
+      @frame = TkRoot.new { title 'Wall Viewer app' }
+      setup!
     end
 
-    def setup
-      set_title "Wall viewer"
-      signal_connect 'destroy' do
-        Gtk.main_quit
-      end
-      @packer = Gtk::Fixed.new
-      add @packer
+    def setup!
+    end
 
-      show_all
-
+    def run!
+      Tk.mainloop
     end
 
   end

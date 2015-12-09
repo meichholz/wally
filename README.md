@@ -13,28 +13,23 @@ It scrapes things from monitor systems and makes them visible.
 
 ## Synopsis
 
-* ``dt {options} command {parameter(s)}``
-* ``dt -h``
+* ``wally {options} command {parameter(s)}``
+* ``wally -h``
 
 ## Options
 
-* **-h** show help (like ``depptool help``)
+* **-h** show help (like ``wally help``)
 * **-v** run verbosed
 
 ## Commands
 
-see ``dt --help``. Some are listed here.
+see ``wally --help``. Some are listed here.
 
 TODO.
 
 ## Status / Todo / Roadmap
 
-See the "Open Tasks" button above for a link to a list of loose ends.
-See [History](file.History.html).
-
-* for hoe/devsupport : Can we seed .projections from guesses?
-* refactor the main code to an App-Class
-* proper module loader
+TODO
 
 ## Description
 

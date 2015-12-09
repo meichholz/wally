@@ -1,5 +1,5 @@
 require 'gli'
-require 'gtk3'
+require 'tk'
 
 @base_modnames = [ ]
 

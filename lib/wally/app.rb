@@ -30,9 +30,8 @@ module Wally
       desc 'Run the main window'
       command :gui do |c|
         c.action do
-          Gtk.init
           @mainwindow = MainWindow.new
-          Gtk.main
+          @mainwindow.run!
         end
       end
       desc 'Use verbose output'

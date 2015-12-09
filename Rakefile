@@ -15,7 +15,6 @@ ds_hoe_spec(projectname) do |spec|
   spec.developer "Marian Eichholz", "marian.eichholz@freenet.ag"
   spec.extra_deps << ['netaddr']
   spec.extra_deps << ['gli']
-  spec.extra_deps << ['gtk3']
 end
 
 # glue tasks
