@@ -1,7 +1,9 @@
 require 'gli'
 require 'tk'
+require 'logger'
+require 'colorize'
 
-@base_modnames = [ ]
+@base_modnames = [ 'debug', 'helper', 'baseobject', ]
 
 def init_loader
   # static framework

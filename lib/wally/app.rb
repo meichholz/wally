@@ -1,9 +1,11 @@
 include GLI::App
 
+# see http://naildrivin5.com/gli/ for quick hints
+
 # @alltodos
 module Wally
 
-  class App
+  class App < BaseObject
 
     def initialize
       @argv = []
@@ -19,6 +21,13 @@ module Wally
 
       desc 'Usage and version'
       version Wally::VERSION
+
+      desc 'Quick test'
+      command :test do |c|
+        c.action do
+          not_implemented_yet
+        end
+      end
 
       desc 'Tell version, short form'
       command :version do |c|
@@ -47,6 +56,31 @@ module Wally
       exit run(@argv)
     end
   
+      # @!attribute logger
+      #   @return [Logger]
+      #   the logger ist based on {::Logger} but is stripped down to be useful
+      #   one the mere console. It is configured only during the first call.
+      attr_writer :logger
+      def logger
+        return @logger if @logger
+        @logger = Logger.new(STDERR)
+        @logger.datetime_format = ""
+        line = ""
+        @logger.formatter = proc do |severity, datetime, progname, msg|
+          line = msg[0]=='#' ?
+            msg[1..-1] :
+            "#{severity}: #{msg}"
+          line = case severity
+                 when 'INFO' then line
+                 when 'WARN' then line.yellow
+                 when 'FATAL' then line.red
+                 when 'DEBUG' then line.yellow.on_light_black
+                 else line
+                 end
+          line+"\n"
+        end
+        @logger
+      end
   end
 
 end

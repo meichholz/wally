@@ -13,19 +13,22 @@ load File.join(File.dirname(__FILE__), 'lib', projectname, 'version.rb')
 
 ds_hoe_spec(projectname) do |spec|
   spec.developer "Marian Eichholz", "marian.eichholz@freenet.ag"
-  spec.extra_deps << ['netaddr']
-  spec.extra_deps << ['gli']
+  [ 'gli',
+    'colorize',
+  ].each{ |gem| spec.extra_deps << [ gem ] }
 end
 
 # glue tasks
 Rake::Task[:default].clear
 task :default => 'run:gui'
 
+ENV['GLI_DEBUG']='true' # force backtraces on check
+
 namespace :run do
   @testconfig = ""
   # construct rake tasks for each command
   %w(
-    version gui 
+    version gui test
   ).each do |command|
     desc "Command: #{command}"
     task command do |t|
