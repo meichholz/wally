@@ -4,6 +4,7 @@ ds_tasks_for :hoe
 ds_configure do |c|
   c.program_name = 'wally'
   c.yard_options = [ ]
+  c.frontend = 'bin/wally' # bundler oo slow
 end
 
 projectname = ds_env.program_name
@@ -33,7 +34,7 @@ namespace :run do
     desc "Command: #{command}"
     task command do |t|
       command = t.to_s.gsub(/^.*:/,"")
-      sh "bundle exec #{ds_env.frontend} #{@testconfig} -v #{command}"
+      sh "#{ds_env.frontend} #{@testconfig} -v #{command}"
     end
   end
 

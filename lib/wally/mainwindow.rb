@@ -3,28 +3,28 @@ module Wally
   class MainWindow
 
     def self.load_tk
-      if @opt_tweak_load_path
-        corepath = $LOAD_PATH.select{|p| p=~/\/ruby\/[0-9]+[^\/]+$/ }[0]
-        $LOAD_PATH.unshift File.join(corepath, 'tk')
-        $LOAD_PATH.unshift File.join(corepath, 'tkextlib')
-        [ 'vu', 'ICONS', 'itk', 'tclx', 'tile',
-          'tcllib', 'itcl', 'bwidget', 'blt', 'blt/tile', ].each do |dir|
-          $LOAD_PATH.unshift File.join(corepath, 'tkextlib', dir)
-        end
-        $LOAD_PATH.unshift corepath
-        $LOAD_PATH.unshift File.join(corepath, 'i686-linux')
-        #puts $LOAD_PATH
-      end
       require 'tk'
     end
 
     def initialize
       self.class.load_tk
-      @frame = TkRoot.new { title 'Wall Viewer app' }
-      setup!
+      TkOption.add '*tearoff', 0
+      @root = TkRoot.new { title 'Wall Viewer app' }
+      setup_menu!
     end
 
-    def setup!
+    def do_frobnify
+      # TODO: find out, when and how the callback is triggered
+      puts "frobbing the foodle"
+    end
+
+    def setup_menu!
+      @filemenu = TkMenu.new(@root)
+      @filemenu.add :command, label: 'Frobnify', command: do_frobnify
+      # connect menus to a bar and the bar to the window
+      @menubar = TkMenu.new(@root)
+      @menubar.add :cascade, menu: @filemenu, label: 'Filefrobnify'
+      @root.menu @menubar
     end
 
     def run!
