@@ -39,7 +39,7 @@ module Wally
       desc 'Run the main window'
       command :gui do |c|
         c.action do
-          @mainwindow = MainWindow.new
+          @mainwindow = AppController.new
           @mainwindow.run!
         end
       end
