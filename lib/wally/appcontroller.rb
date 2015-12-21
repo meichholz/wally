@@ -87,7 +87,7 @@ module Wally
       file_menu.add :separator
       file_menu.add :command, label: 'Quit', underline: 0, command: proc{do_quit}
       # connect menus to a bar and the bar to the window
-      menubar.add :cascade, menu: file_menu, label: 'File'
+      menubar.add :cascade, menu: file_menu, label: 'File', underline: 0
       @root.menu menubar
     end
 
