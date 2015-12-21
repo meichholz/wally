@@ -13,7 +13,7 @@ module Wally
       @root = TkRoot.new do
         title 'Wall Viewer app'
         # geometry '1920x1080+0+0'
-        geometry '1024x800+10+10' if Tk.windowingsystem == 'x11'
+        geometry '1024x800+10+10' # if Tk.windowingsystem == 'x11'
       end
       setup_menu!
       setup_panes!
